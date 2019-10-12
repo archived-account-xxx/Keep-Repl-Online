@@ -1,0 +1,10 @@
+#n-container{
+  position: fixed;
+  right:0;
+  bottom:0;
+}
+.notifications{
+  left:0;
+  cursor: pointer;
+  padding:10px 10px;
+}
