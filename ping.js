@@ -20,15 +20,17 @@ setInterval(function(){
     }
     count = result.length
     for (i = 0; i < count; i++) {
+      y = x + 1
       if(result[x] == undefined){
+        console.log("Done!")
         break
+        return
       }
       request("https://" + result[x].Url,function(err){
         if(err){
           console.log("error")
           return
         }
-        console.log(`Pinged: ${result[x].Url}`)
         x = x + 1
       })
 }
