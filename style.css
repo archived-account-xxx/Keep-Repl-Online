@@ -3,8 +3,12 @@
   right:0;
   bottom:0;
 }
+body{
+  text-align: center;
+}
 .notifications{
   left:0;
+  border: 1px solid;
   cursor: pointer;
   padding:10px 10px;
 }
