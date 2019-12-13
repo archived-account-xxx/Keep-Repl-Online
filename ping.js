@@ -29,6 +29,7 @@ setInterval(function(){
       request("https://" + result[x].Url,function(err){
         if(err){
           console.log("error")
+          console.log(err)
           return
         }
         x = x + 1
