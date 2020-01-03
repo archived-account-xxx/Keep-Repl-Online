@@ -16,13 +16,15 @@ con.getConnection(function(err) {
   if (err) throw err;
   console.log("Connected to database!");
 });
-function server(res,req){
-  if(res.url == "/" && res.method == "GET"){
-    fs.createReadStream("./index.html").pipe(req)
-  }else if(res.url == "/script.js" && res.method == "GET"){
-    fs.createReadStream("./script.js").pipe(req)
-  }else if(res.url == "/" && res.method == "POST"){
-    replco = res.body.url
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(express.static("public"))
+
+app.get('/',(req,res)=>{
+  fs.createReadStream("public/index.html").pipe(res)
+})
+app.post('/',(res,req)=>{
+  replco = res.body.url
     replco = replco.search("repl.co")
     if(replco == -1){
       req.end("notrepl")
@@ -51,14 +53,7 @@ function server(res,req){
         req.end("success")
       })
     })
-  }else if(res.url == "/style.css" && res.method == "GET"){
-    req.writeHead(200,{"Content-Type":"text/css"})
-    fs.createReadStream("./style.css").pipe(req)
-  }
-}
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:false}))
-app.use(server)
+})
 app.listen(port,(err)=>{
   if(err){
     console.log(err)

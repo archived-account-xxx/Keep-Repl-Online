@@ -1,0 +1,39 @@
+body{
+  background-color: #333;
+}
+*{
+  color: white;
+}
+button, input{
+  color: black;
+}
+#n-container{
+  position: fixed;
+  right:0;
+  bottom:0;
+}
+body{
+  text-align: center;
+}
+.notifications{
+  left:0;
+  border: 1px solid;
+  cursor: pointer;
+  padding:10px 10px;
+  border-radius: 10px 10px 10px 10px;
+}
+#title{
+  padding: 10px 10px;
+  background-color: whitesmoke;
+  border: 1px solid;
+  border-radius: 10px 10px 10px 10px;
+  color: black;
+}
+form{
+  padding: 10px 10px;
+  background-color: whitesmoke;
+  border: 1px solid;
+  border-radius: 10px 10px 10px 10px;
+  color: black;
+  height: 50vh;
+}
