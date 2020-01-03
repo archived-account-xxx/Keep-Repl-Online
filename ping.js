@@ -26,6 +26,7 @@ setInterval(function(){
         break
         return
       }
+      console.log(result[x].Url)
       request("https://" + result[x].Url,function(err){
         if(err){
           console.log("error")
